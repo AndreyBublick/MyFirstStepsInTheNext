@@ -1,8 +1,21 @@
 'use client'
 import React from 'react'
-import { Cards } from '@/features/cards/ui/Cards'
+import { useGetCharacterQuery } from '@/features/cards/lib/api'
+import { SingleCardView } from '@/features/cards/ui/SingleCardView'
 
-const Page = () => {
-  return <Cards />
+type Props = {
+  params: Promise<{
+    id: string
+  }>
+}
+const Page = (props: Props) => {
+  const { id } = React.use(props.params)
+  const { data } = useGetCharacterQuery(Number(id))
+  if (!data) {
+    return null
+  }
+
+  const { image, name, species } = data
+  return <SingleCardView body={species} image={image} title={name} />
 }
 export default Page
