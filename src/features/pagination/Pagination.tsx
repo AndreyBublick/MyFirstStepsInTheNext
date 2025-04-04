@@ -35,6 +35,11 @@ const Pagination = (props: Props) => {
     'relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
   const className =
     'relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-gray-300 ring-inset hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex'
+  const disabledClassNameNavigation = 'pointer-events-none opacity-50 cursor-not-allowed'
+  const classNameNavigationNext =
+    'relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-gray-300 ring-inset hover:bg-gray-50 focus:z-20 focus:outline-offset-0'
+  const classNameNavigationPrev =
+    'relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-gray-300 ring-inset hover:bg-gray-50 focus:z-20 focus:outline-offset-0'
 
   const pagesMapped = Array(Math.ceil(pageGroup))
     .fill(null)
@@ -83,8 +88,10 @@ const Pagination = (props: Props) => {
         <div>
           <nav className='isolate inline-flex -space-x-px rounded-md shadow-xs' aria-label='Pagination'>
             <Link
-              href={`${pathname}?${createQueryString('list', listNumber - 1)}`}
-              className='relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-gray-300 ring-inset hover:bg-gray-50 focus:z-20 focus:outline-offset-0'
+              href={`${pathname}?${createQueryString('list', listNumber === 1 ? listNumber : listNumber - 1)}`}
+              className={
+                listNumber === 1 ? classNameNavigationPrev + disabledClassNameNavigation : classNameNavigationPrev
+              }
             >
               <span className='sr-only'>Previous</span>
               <svg className='size-5' viewBox='0 0 20 20' fill='currentColor' aria-hidden='true' data-slot='icon'>
@@ -100,7 +107,11 @@ const Pagination = (props: Props) => {
 
             <Link
               href={`${pathname}?${createQueryString('list', pagesCount > pageGroup * listNumber ? listNumber + 1 : listNumber)}`}
-              className='relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-gray-300 ring-inset hover:bg-gray-50 focus:z-20 focus:outline-offset-0'
+              className={
+                pagesCount > pageGroup * listNumber
+                  ? classNameNavigationNext
+                  : classNameNavigationNext + disabledClassNameNavigation
+              }
             >
               <span className='sr-only'>Next</span>
               <svg className='size-5' viewBox='0 0 20 20' fill='currentColor' aria-hidden='true' data-slot='icon'>
