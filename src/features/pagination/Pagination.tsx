@@ -40,11 +40,16 @@ const Pagination = (props: Props) => {
     'relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-gray-300 ring-inset hover:bg-gray-50 focus:z-20 focus:outline-offset-0'
   const classNameNavigationPrev =
     'relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-gray-300 ring-inset hover:bg-gray-50 focus:z-20 focus:outline-offset-0'
+  const isFullRenderGroup = pagesCount >= pageGroup * listNumber
 
-  const pagesMapped = Array(Math.ceil(pageGroup))
+  console.log(`${pagesCount} -  > ${pageGroup * listNumber}`)
+  const pagesMapped = Array(Math.ceil(isFullRenderGroup ? pageGroup : pagesCount % pageGroup))
     .fill(null)
     .map((_, i) => {
       const index = pageGroup * listNumber - pageGroup + i + 1
+
+      console.log(`${pagesCount} >= ${pageGroup + i * listNumber + 1}`)
+
       return (
         <Link
           key={i}
