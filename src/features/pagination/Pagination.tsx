@@ -79,7 +79,7 @@ const Pagination = (props: Props) => {
             Showing
             <span className='font-medium md:font-bold'>{pageNumber}</span>
             to
-            <span className='font-medium md:font-bold'>{count}</span>
+            <span className='font-medium md:font-bold'>{pagesCount}</span>
             of
             <span className='font-medium md:font-bold'>{totalCount}</span>
             results
