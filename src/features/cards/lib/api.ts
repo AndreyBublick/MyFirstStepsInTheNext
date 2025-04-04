@@ -4,10 +4,15 @@ import type { CharacterType } from '@/app/types'
 
 export const cardsApi = baseApi.injectEndpoints({
   endpoints: build => ({
-    getCharacters: build.query<BaseResponse<CharacterType>, void>({
-      query: () => '/character',
+    getCharacters: build.query<BaseResponse<CharacterType>, string>({
+      query: page => ({
+        url: '/character',
+        params: {
+          page,
+        },
+      }),
     }),
-    getCharacter: build.query<CharacterType, number>({
+    getCharacter: build.query<CharacterType, string>({
       query: id => `/character/${id}`,
     }),
   }),

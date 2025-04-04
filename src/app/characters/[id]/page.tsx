@@ -10,7 +10,7 @@ type Props = {
 }
 const Page = (props: Props) => {
   const { id } = React.use(props.params)
-  const { data } = useGetCharacterQuery(Number(id))
+  const { data } = useGetCharacterQuery(id)
   if (!data) {
     return null
   }
