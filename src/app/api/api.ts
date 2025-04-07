@@ -8,10 +8,6 @@ export const baseApi = createApi({
 
     return fetchBaseQuery({
       baseUrl: process.env.NEXT_PUBLIC_API_URL,
-      /*prepareHeaders: (headers) => {
-                headers.set("API-KEY", import.meta.env.VITE_API_KEY)
-                headers.set("Authorization", `Bearer ${localStorage.getItem(AUTH_TOKEN)}`)
-            },*/
     })(args, api, extraOptions)
   },
   endpoints: () => ({}),
