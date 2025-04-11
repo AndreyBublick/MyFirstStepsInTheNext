@@ -19,9 +19,11 @@ const Render = (props: PopupProps) => {
 
   return (
     <>
-      <Popup title={title} open={isOpen} onOpenChange={onOpenChange} subTitle={subTitle}>
-        {children}
-      </Popup>
+      <div className={isOpen ? '' : 'cursor-pointer'}>
+        <Popup title={title} open={isOpen} onOpenChange={onOpenChange} subTitle={subTitle}>
+          {children}
+        </Popup>
+      </div>
     </>
   )
 }
@@ -50,7 +52,8 @@ export const Default: Story = {
     title: 'write',
     subTitle: 'valera',
     children: (
-      <CardBody image={'https://images.drive.ru/i/0/4efb822709b602c33f000aa5.jpg'} title={'test'} body={'body'} />
+      /*<CardBody image={'https://images.drive.ru/i/0/4efb822709b602c33f000aa5.jpg'} title={'test'} body={'body'} />*/
+      <h1>asdasdasd as dasd asd asd </h1>
     ),
     open: false,
   },

@@ -15,9 +15,15 @@ export const SingleCardView = (props: Props) => {
   }
   return (
     <>
-      <Popup title={'dsadasd'} open={isOpen} onOpenChange={onOpenChange}>
-        <CardBody {...props} />
-      </Popup>
+      <div className='flex justify-center min-h-screen'>
+        <div className='flex justify-center items-center min-h-screen flex-col h-[calc(100vh-100px)]'>
+          <div className={isOpen ? '' : 'cursor-pointer'}>
+            <Popup title={'dsadasd'} open={isOpen} onOpenChange={onOpenChange}>
+              <CardBody {...props} />
+            </Popup>
+          </div>
+        </div>
+      </div>
     </>
   )
 }
