@@ -9,7 +9,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/api/character/avatar/**',
       },
-      // Можно добавить другие домены по аналогии
+      {
+        protocol: 'https',
+        hostname: 'images.drive.ru',
+        port: '',
+        pathname: '/i/**',
+      },
     ],
   },
 }
