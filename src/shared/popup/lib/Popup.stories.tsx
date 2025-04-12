@@ -53,7 +53,7 @@ export const Default: Story = {
     subTitle: 'valera',
     children: (
       /*<CardBody image={'https://images.drive.ru/i/0/4efb822709b602c33f000aa5.jpg'} title={'test'} body={'body'} />*/
-      <h1>asdasdasd as dasd asd asd </h1>
+      <h1>asdasdasdd as dasd asd asd </h1>
     ),
     open: false,
   },
