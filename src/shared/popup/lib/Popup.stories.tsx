@@ -28,7 +28,7 @@ const Render = (props: PopupProps) => {
   )
 }
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
+// More on how to set up stories at:
 const meta = {
   title: 'Example/Popup',
   component: Popup,
