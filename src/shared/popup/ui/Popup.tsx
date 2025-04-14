@@ -14,9 +14,6 @@ export type PopupProps = {
 
 const DialogDemo = ({ title, subTitle, children, open, ...rest }: PopupProps) => (
   <Dialog.Root open={open} {...rest}>
-    {/* <div className='flex justify-center min-h-screen'>
-      <div className='flex justify-center items-center min-h-screen flex-col h-[calc(100vh-100px)]'>
-        <div className={open ? '' : 'cursor-pointer'}>*/}
     <Dialog.Trigger asChild>
       <div>{children}</div>
     </Dialog.Trigger>
