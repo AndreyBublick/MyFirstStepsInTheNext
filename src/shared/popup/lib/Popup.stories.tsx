@@ -33,7 +33,7 @@ const meta = {
   title: 'Example/Popup',
   component: Popup,
   parameters: {
-    // Optional parameter to center the component in the Canvas. More  iinfo: https://storybook.js.org/docs/configure/story - layout
+    // Optional parameter to center the component in the Canvas. More  iinfo: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
   },
   tags: ['autodocs'],
