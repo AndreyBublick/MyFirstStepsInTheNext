@@ -1,0 +1,29 @@
+.header {
+  padding: 12px /*64px*/ 0 /*60px*/;
+  background-color: #150d54;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 36px;
+  color: white;
+  letter-spacing: 0;
+}
+
+.wrapper {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 64px 0 60px;
+}
+
+.sub_wrapper {
+  display: flex;
+  flex: 1;
+  gap: 24px;
+  align-items: center;
+  justify-content: flex-end;
+}

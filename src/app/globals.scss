@@ -7,21 +7,28 @@
 
 :root {
   --background: #fff;
-  --foreground: #171717;
 
-  margin: 10px;
+  /* --foreground: #171717; */
+
+  /* margin: 10px; */
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
-    /* --background: #0a0a0a; */
+    --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   width: 100%;
   font-family: Arial, Helvetica, sans-serif;
   color: var(--foreground);
   background: var(--background);
+}
+
+.container {
+  max-width: 1310px; // 1280 maket + 30 padding
+  margin: 0 auto;
+  padding: 0 15px;
 }
