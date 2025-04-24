@@ -1,6 +1,6 @@
 'use client'
 import s from './Picker.module.scss'
-import { type ChangeEvent, type DetailedHTMLProps, type SelectHTMLAttributes } from 'react'
+import { type ChangeEvent, type DetailedHTMLProps, type SelectHTMLAttributes, useState } from 'react'
 
 import { ArrowIosDownOutline } from '@/_accets/icons/components'
 type DefaultSelectPropsType = DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>
@@ -10,7 +10,17 @@ type SelectPropsType = DefaultSelectPropsType & {
   onChangeOption?: (option: any) => void
 }
 
-export const Picker = ({ options, className, onChange, value, onChangeOption, ...restProps }: SelectPropsType) => {
+export const Picker = ({
+  options,
+  className,
+  onChange,
+  value,
+  onChangeOption,
+  disabled,
+  ...restProps
+}: SelectPropsType) => {
+  const [isOpen, setIsOpen] = useState(false)
+
   const mappedOptions: any[] = options
     ? options.map(o => (
         <option className={s.option} key={o.id} value={o.id}>
@@ -21,16 +31,27 @@ export const Picker = ({ options, className, onChange, value, onChangeOption, ..
 
   const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
     /* onChangeOption?.(e.currentTarget.value);*/
+
     onChange?.(e)
     onChangeOption?.(+e.currentTarget.value)
   }
 
-  const finalSelectClassName = s.select + (className ? ' ' + className : '')
+  const finalSelectClassName =
+    s.select + (className ? ' ' + className : '') + (disabled ? ' ' + s.disabled : '') + (isOpen ? ' ' + s.active : '')
 
   return (
     <>
-      <div className={s.test}>
-        <select className={finalSelectClassName} onChange={onChangeCallback} {...restProps} value={value}>
+      <div className={s.select_wrapper}>
+        <select
+          onClick={() => {
+            setIsOpen(prev => !prev)
+          }}
+          disabled={disabled}
+          className={finalSelectClassName}
+          onChange={onChangeCallback}
+          {...restProps}
+          value={value}
+        >
           {mappedOptions}
         </select>
         <ArrowIosDownOutline className={s.arrow} />

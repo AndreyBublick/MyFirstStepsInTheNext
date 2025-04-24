@@ -1,0 +1,142 @@
+.Trigger {
+  all: unset;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+  min-width: 210px;
+  height: 35px; /* test */
+  padding: 0 15px;
+  border: 1px solid #4c4c4c;
+  border-radius: 2px;
+
+  font-size: 13px;
+  line-height: 1;
+  color: white;
+
+  background-color: transparent;
+  box-shadow: 0 2px 10px var(--black-a7);
+
+  &:hover {
+    background-color: #171717;
+  }
+
+  &:focus-visible {
+    border: 1px solid transparent;
+    border-radius: 1px;
+    outline: 1px solid #397df6;
+  }
+
+  &[data-placeholder] {
+    /* color: white; */
+  }
+
+  &[data-state='open'] {
+    border: 1px solid white;
+    border-radius: 2px 2px 0 0;
+  }
+}
+
+.Icon {
+  color: white;
+}
+
+.Content {
+  transform: translateY(-1px);
+  border-radius: 0 0 2px 2px;
+  background-color: #171717;
+  box-shadow:
+    0 10px 38px -10px rgb(22 23 24 / 35%),
+    0 10px 20px -15px rgb(22 23 24 / 20%);
+
+  &[data-state='open'] {
+    .Viewport {
+      border: 1px solid white;
+    }
+  }
+}
+
+.Viewport {
+  min-width: 210px;
+  border: 1px solid #4c4c4c;
+  border-radius: 0 0 2px 2px;
+
+  /* &[data-state='open'] {
+    border-color: #397df6; // Пример: синяя рамка при открытии
+    background-color: red;
+    animation: fadeIn 0.2s ease-out; // Анимация появления
+  } */
+}
+
+.Item {
+  user-select: none;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  height: 25px;
+  padding: 0 35px 0 25px;
+
+  /* border-radius: 3px; */
+
+  font-size: 13px;
+  line-height: 1;
+  color: white;
+
+  &[data-disabled] {
+    pointer-events: none;
+    color: var(--mauve-8);
+  }
+
+  &[data-highlighted] {
+    cursor: pointer;
+    color: #397df6;
+    background-color: #333;
+    outline: none;
+  }
+}
+
+.Label {
+  padding: 0 25px;
+  font-size: 12px;
+  line-height: 25px;
+  color: var(--mauve-11);
+}
+
+.Separator {
+  height: 1px;
+  margin: 5px;
+  background-color: var(--violet-6);
+}
+
+.ItemIndicator {
+  position: absolute;
+  left: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 25px;
+}
+
+.ScrollButton {
+  cursor: default;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 25px;
+
+  color: var(--violet-11);
+
+  background-color: white;
+}

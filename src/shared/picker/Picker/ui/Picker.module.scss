@@ -2,10 +2,20 @@
 }
 
 .select {
+  cursor: pointer;
+
   position: relative;
+
   min-width: 210px;
   padding: 6px 12px;
+  border-radius: 2px;
+
+  /* font-family: Inter; */
+  font-size: 16px;
+  line-height: 1.5;
+
   appearance: none;
+  outline: 1px solid #4c4c4c;
 
   &::after {
     content: '';
@@ -15,13 +25,36 @@
     right: 6px;
     transform: translateY(-50%);
   }
+
+  &:focus-visible {
+    outline: 1px solid #397df6;
+  }
 }
 
 .arrow {
-  color: red;
 }
 
-.test {
-  color: #1ea7fd;
-  background: #357a14;
+.select_wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: white;
+
+  svg {
+    pointer-events: none;
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.disabled {
+  cursor: not-allowed;
+  color: #4c4c4c;
+}
+
+.select.active {
+  outline: 1px solid white;
 }
