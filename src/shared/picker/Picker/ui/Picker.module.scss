@@ -1,0 +1,27 @@
+.option {
+}
+
+.select {
+  position: relative;
+  min-width: 210px;
+  padding: 6px 12px;
+  appearance: none;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+  }
+}
+
+.arrow {
+  color: red;
+}
+
+.test {
+  color: #1ea7fd;
+  background: #357a14;
+}

@@ -1,6 +1,9 @@
 .header {
-  padding: 12px /*64px*/ 0 /*60px*/;
-  background-color: #150d54;
+  background-color: #0d0d0d;
+
+  hr {
+    color: #333;
+  }
 }
 
 .logo {
@@ -9,21 +12,4 @@
   line-height: 36px;
   color: white;
   letter-spacing: 0;
-}
-
-.wrapper {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 0 64px 0 60px;
-}
-
-.sub_wrapper {
-  display: flex;
-  flex: 1;
-  gap: 24px;
-  align-items: center;
-  justify-content: flex-end;
 }
