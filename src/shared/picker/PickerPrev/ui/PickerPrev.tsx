@@ -30,7 +30,7 @@ export const PickerPrev = ({
     : [] /*// map options with key*/
 
   const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
-    /* onChangeOption?.(e.currentTarget.value);*/
+    /*onChangeOption?.(e.currentTarget.value);*/
 
     onChange?.(e)
     onChangeOption?.(+e.currentTarget.value)
