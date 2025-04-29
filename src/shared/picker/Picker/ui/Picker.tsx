@@ -14,7 +14,7 @@ export type Option = {
   icon?: React.ReactNode
 }
 
-type Props = {
+export type PropsPicker = {
   defaultValue?: string
   options: Option[]
   disabled?: boolean
@@ -45,8 +45,8 @@ export const Picker = ({
   title,
   defaultValue,
   disabled = false,
-  ...rest
-}: Props) => {
+  /*...rest*/
+}: PropsPicker) => {
   const [isOpen, setIsOpen] = useState(false)
   const [value, setValue] = useState(() => checkValueinObject(options, defaultValue))
 
@@ -55,10 +55,10 @@ export const Picker = ({
   }, [])
   const onValueChangeHandler = useCallback(
     (newValue: string) => {
-      onChange?.(value)
+      onChange?.(newValue)
       setValue(newValue)
     },
-    [onChange, value],
+    [onChange],
   )
   const optionsMapped = useMemo(() => {
     return options.map(({ id, value, icon }) => (
@@ -79,13 +79,18 @@ export const Picker = ({
       onValueChange={onValueChangeHandler}
       disabled={disabled}
     >
-      <Select.Trigger className={s.Trigger} aria-label='select' style={{ minWidth: minWidth }}>
+      {/*<Select.Trigger className={s.Trigger} aria-label='select' style={{ width: minWidth }}>*/}
+      <Select.Trigger className={s.Trigger} aria-label='select' style={{ minWidth: minWidth, width: '100%' }}>
         <Select.Value placeholder='Выбрать…' />
         <Select.Icon className={s.Icon}>{isOpen ? <ArrowIosUp /> : <ArrowIosDownOutline />}</Select.Icon>
         {title && <span className={s.title}>{title}</span>}
       </Select.Trigger>
       <Select.Portal>
-        <Select.Content className={s.Content} position='popper' style={{ minWidth: minWidth }}>
+        <Select.Content
+          className={s.Content}
+          position='popper'
+          style={{ minWidth: 'var(--radix-select-trigger-width)' }}
+        >
           <Select.ScrollUpButton className={s.ScrollButton}>
             <ArrowIosUp />
           </Select.ScrollUpButton>
