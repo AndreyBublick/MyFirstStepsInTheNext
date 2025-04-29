@@ -14,12 +14,16 @@ export const CardBody = (props: CardBodyProps) => {
       <Image
         src={image}
         alt='character'
-        className='aspect-square  rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-7/8 text-center mx-auto my-0'
+        className='aspect-square  rounded-lg object-cover group-hover:opacity-75 xl:aspect-7/8 text-center mx-auto my-0'
         width={310}
         height={310}
       />
-      <h3 className='mt-4 text-sm text-gray-700'>{title}</h3>
-      <p className='mt-1 text-lg font-medium text-gray-900'>{body}</p>
+      <h3 className='mt-4 text-sm' style={{ color: 'var(--color-light-700)' }}>
+        {title}
+      </h3>
+      <p className='mt-1 text-lg font-medium' style={{ color: 'var(--color-light-300)' }}>
+        {body}
+      </p>
     </div>
   )
 }

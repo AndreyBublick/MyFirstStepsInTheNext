@@ -80,7 +80,7 @@ export const Picker = ({
       disabled={disabled}
     >
       {/*<Select.Trigger className={s.Trigger} aria-label='select' style={{ width: minWidth }}>*/}
-      <Select.Trigger className={s.Trigger} aria-label='select' style={{ minWidth: minWidth, width: '100%' }}>
+      <Select.Trigger className={s.Trigger} aria-label='select' style={{ minWidth: minWidth }}>
         <Select.Value placeholder='Выбрать…' />
         <Select.Icon className={s.Icon}>{isOpen ? <ArrowIosUp /> : <ArrowIosDownOutline />}</Select.Icon>
         {title && <span className={s.title}>{title}</span>}

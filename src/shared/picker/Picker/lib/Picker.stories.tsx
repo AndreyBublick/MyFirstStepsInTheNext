@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import * as React from 'react'
 import { useEffect, useState } from 'react'
-import { Picker, type PropsPicker } from '@/shared/picker/Picker/ui/Picker'
 import { fn } from '@storybook/test'
+import { Picker, type PropsPicker } from '@/shared'
 
 const DEFAULT_OPTIONS = [
   { id: 1, value: 'value_1' },
@@ -50,7 +50,7 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {
+export const DefaultPicker: Story = {
   args: {
     options: DEFAULT_OPTIONS,
     onChange: fn(),

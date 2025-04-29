@@ -46,7 +46,7 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {
+export const DefaultPopup: Story = {
   args: {
     title: 'write',
     subTitle: 'valera',
