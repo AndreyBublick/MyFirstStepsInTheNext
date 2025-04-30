@@ -5,6 +5,7 @@ import { Header } from '@/features/header/ui/Header'
 import { PickerPrev } from '@/shared/picker/PickerPrev/ui/PickerPrev'
 import { type Option, Picker } from '@/shared/picker/Picker/ui/Picker'
 import { FlagRussia, FlagUnitedKingdom } from '@/_accets/icons/components'
+import { Radio, RadioGroup } from '@/shared/radio'
 type Props = ComponentPropsWithoutRef<'div'>
 
 export default function Layout(props: Props) {
@@ -15,6 +16,10 @@ export default function Layout(props: Props) {
   return (
     <>
       <Header>
+        <RadioGroup defaultValue={'GroupRadio'} orientation={'horizontal'}>
+          <Radio value={'RadioGroup'} />
+          <Radio value={'GroupRadio'} />
+        </RadioGroup>
         <PickerPrev
           /*disabled={true}*/
           options={[
