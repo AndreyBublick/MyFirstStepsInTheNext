@@ -38,6 +38,18 @@
   }
 }
 
+.Root.disabled .Item {
+  cursor: not-allowed;
+  border: 2px solid var(--color-dark-100);
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: transparent;
+    outline-color: transparent;
+  }
+}
+
 .Indicator {
   position: relative;
 
@@ -61,10 +73,21 @@
   }
 }
 
+.Root.disabled .Indicator {
+  &::after {
+    background-color: var(--color-dark-100);
+  }
+}
+
 .Label {
   cursor: pointer;
   font-size: var(--font-size-s);
   color: var(--color-light-100);
+}
+
+.Root.disabled .Label {
+  cursor: not-allowed;
+  color: var(--color-light-900);
 }
 
 .Radio_item {
