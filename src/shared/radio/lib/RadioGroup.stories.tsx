@@ -5,7 +5,7 @@ import { Radio, RadioGroup, type RadioGroupProps } from '@/shared/radio'
 
 const Render = (props: RadioGroupProps) => {
   /* const onOpenChange = (flag: boolean): void => {
-     setOpen(flag)
+     setOpen(flag);
   }*/
 
   return (
