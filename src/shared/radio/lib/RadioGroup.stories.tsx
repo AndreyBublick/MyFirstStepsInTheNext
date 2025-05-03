@@ -4,6 +4,7 @@ import { fn } from '@storybook/test'
 import { Radio, RadioGroup, type RadioGroupProps } from '@/shared/radio'
 
 const Render = (props: RadioGroupProps) => {
+
   /* const onOpenChange = (flag: boolean): void => {
      setOpen(flag);
   }*/
@@ -23,7 +24,7 @@ const meta = {
   title: 'Example/RadioGroup',
   component: RadioGroup,
   parameters: {
-    // Optional parameter to center the component in the Canvas. More  iinfo: https://storybook.js.org/docs/configure/story - layout
+    // Optional parameter to center the component in the Canvas. More  info: https://storybook.js.org/docs/configure/story - layout
     layout: 'centered',
   },
   tags: ['autodocs'],
