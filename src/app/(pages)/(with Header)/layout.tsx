@@ -1,20 +1,34 @@
 'use client'
-import { type ComponentPropsWithoutRef, useState } from 'react'
+import { type ComponentPropsWithoutRef, useCallback, useState } from 'react'
 import s from './Layout.module.scss'
 import { Header } from '@/features/header/ui/Header'
 import { PickerPrev } from '@/shared/picker/PickerPrev/ui/PickerPrev'
 import { type Option, Picker } from '@/shared/picker/Picker/ui/Picker'
 import { FlagRussia, FlagUnitedKingdom } from '@/_accets/icons/components'
 import { Radio, RadioGroup } from '@/shared/radio'
-import {useLoader} from "@/hooks/useLoader";
+import { useLoader } from '@/hooks/useLoader'
+import { useAppDispatch, useAppSelector } from '@/hooks/RTK'
+import { login, logout, selectIsLoggedIn } from '@/app/appSlice'
+import { Button } from '@/shared/button'
 type Props = ComponentPropsWithoutRef<'div'>
 
 export default function Layout(props: Props) {
+  const isLoggedIn = useAppSelector(selectIsLoggedIn)
+  const dispatch = useAppDispatch()
+
   const [languages] = useState<Option[]>([
     { id: 1, value: 'Russian', icon: <FlagRussia /> },
     { id: 2, value: 'English', icon: <FlagUnitedKingdom /> },
   ])
-    useLoader();
+  useLoader()
+
+  const loginHandler = useCallback(() => {
+    dispatch(login())
+  }, [dispatch])
+  const logoutHandler = useCallback(() => {
+    dispatch(logout())
+  }, [dispatch])
+
   return (
     <>
       <Header>
@@ -32,6 +46,7 @@ export default function Layout(props: Props) {
         />
 
         <Picker options={languages} defaultValue={'lo1'} minWidth={'163px'} />
+        {!isLoggedIn ? <Button onClick={loginHandler}>login</Button> : <Button onClick={logoutHandler}>logout</Button>}
       </Header>
       <main {...props} className={s.main} />
     </>
