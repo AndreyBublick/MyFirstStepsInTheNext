@@ -6,6 +6,7 @@ import { PickerPrev } from '@/shared/picker/PickerPrev/ui/PickerPrev'
 import { type Option, Picker } from '@/shared/picker/Picker/ui/Picker'
 import { FlagRussia, FlagUnitedKingdom } from '@/_accets/icons/components'
 import { Radio, RadioGroup } from '@/shared/radio'
+import {useLoader} from "@/hooks/useLoader";
 type Props = ComponentPropsWithoutRef<'div'>
 
 export default function Layout(props: Props) {
@@ -13,6 +14,7 @@ export default function Layout(props: Props) {
     { id: 1, value: 'Russian', icon: <FlagRussia /> },
     { id: 2, value: 'English', icon: <FlagUnitedKingdom /> },
   ])
+    useLoader();
   return (
     <>
       <Header>
