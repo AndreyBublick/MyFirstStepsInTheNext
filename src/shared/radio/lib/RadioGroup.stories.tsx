@@ -4,7 +4,6 @@ import { fn } from '@storybook/test'
 import { Radio, RadioGroup, type RadioGroupProps } from '@/shared/radio'
 
 const Render = (props: RadioGroupProps) => {
-
   /* const onOpenChange = (flag: boolean): void => {
      setOpen(flag);
   }*/
@@ -61,6 +60,7 @@ export const DefaultPicker: Story = {
     onValueChange: fn(),
     orientation: 'vertical',
     defaultValue: 'RadioGroup',
+    name: 'test',
   },
 
   /*argTypes: {

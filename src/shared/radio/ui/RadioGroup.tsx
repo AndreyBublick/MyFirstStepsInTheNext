@@ -1,9 +1,9 @@
 import styles from './style.module.scss'
 import * as React from 'react'
+import { useCallback, useState } from 'react'
 import type { RadioGroupProps as GroupRadioProps } from '@radix-ui/react-radio-group'
 import * as RadioContainer from '@radix-ui/react-radio-group'
 import { clsx } from 'clsx'
-import { useCallback, useState } from 'react'
 
 type RadioProps = {
   value: string
@@ -29,7 +29,7 @@ export const RadioGroup = ({
     orientation === 'horizontal' && styles.horizontal,
     disabled && styles.disabled,
   )
-  /* const styles = clsx(style, {})*/
+
   const [currentValue, setCurrentValue] = useState(value || defaultValue)
 
   const onValueChangeHandler = useCallback(

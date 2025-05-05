@@ -1,0 +1,55 @@
+.button {
+  cursor: pointer;
+  padding: 0.4em 2em;
+
+  /* border: none; */
+  border-radius: 2px;
+  outline: none;
+
+  &:active {
+    border: none;
+    outline: none;
+  }
+
+  &:focus-visible {
+    border: none;
+    outline: 2px solid white;
+  }
+}
+
+.primary {
+  color: var(--color-light-100);
+  background-color: var(--color-accent-900);
+}
+
+.secondary {
+  color: white;
+  background-color: var(--color-dark-300);
+}
+
+.outlined {
+  border: 1px solid var(--color-accent-500);
+  color: var(--color-accent-500);
+  background-color: transparent;
+}
+
+.text {
+  color: var(--color-accent-500);
+  background-color: transparent;
+}
+
+.lg {
+  font-size: 20px;
+}
+
+.md {
+  font-size: 16px;
+}
+
+.sm {
+  font-size: 14px;
+}
+
+.button.fullWidth {
+  width: 100%;
+}

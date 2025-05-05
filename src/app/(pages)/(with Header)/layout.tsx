@@ -10,6 +10,7 @@ import { useLoader } from '@/hooks/useLoader'
 import { useAppDispatch, useAppSelector } from '@/hooks/RTK'
 import { login, logout, selectIsLoggedIn } from '@/app/appSlice'
 import { Button } from '@/shared/button'
+
 type Props = ComponentPropsWithoutRef<'div'>
 
 export default function Layout(props: Props) {
@@ -32,7 +33,7 @@ export default function Layout(props: Props) {
   return (
     <>
       <Header>
-        <RadioGroup defaultValue={'GroupRadio'} orientation={'horizontal'}>
+        <RadioGroup defaultValue={'GroupRadio'} name={'test'} orientation={'horizontal'}>
           <Radio value={'RadioGroup'} />
           <Radio value={'GroupRadio'} />
         </RadioGroup>
