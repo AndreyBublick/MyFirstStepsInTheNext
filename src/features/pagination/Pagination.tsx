@@ -32,10 +32,10 @@ const Pagination = (props: Props) => {
   )
 
   const activeClassName =
-    'relative z-10 inline-flex items-center bg-[var(--color-accent-900)] px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 ring-1 ring-[var(--color-light-100)] ring-inset'
+    'relative z-10 inline-flex items-center bg-[var(--color-accent-900)] w-[44px] h-[40px] px-4 py-2 text-sm font-semibold text-white focus:z-20  ring-1 ring-[var(--color-light-100)] ring-inset justify-center'
   /*border border-[var(--color-light-500)]*/
   const className =
-    'relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-[var(--color-light-500)] ring-inset hover:bg-[var(--color-accent-100)] focus:z-20 focus:outline-offset-0 md:inline-flex'
+    ' relative hidden items-center px-4 py-2 text-sm font-semibold  ring-1 ring-[var(--color-light-500)] ring-inset hover:bg-[var(--color-accent-100)] focus:z-20 focus:outline-offset-0 md:inline-flex w-[44px] h-[40px] justify-center'
   const disabledClassNameNavigation = 'pointer-events-none opacity-50 cursor-not-allowed'
   const classNameNavigationNext =
     'relative inline-flex items-center rounded-r-md px-2 py-2  ring-1 ring-gray-300 ring-inset hover:bg-[var(--color-accent-100)] focus:z-20 focus:outline-offset-0'
@@ -61,7 +61,7 @@ const Pagination = (props: Props) => {
     })
 
   return (
-    <div className='flex items-center justify-between border-t border-gray-200 hite px-4 py-3 sm:px-6'>
+    <div className='flex items-center justify-between border-t border-gray-200 hite px-4 py-3 sm:px-6 text-[var(--color-light-100)]'>
       <div className='flex flex-1 justify-between sm:hidden'>
         <a
           href='#'

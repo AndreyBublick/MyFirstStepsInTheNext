@@ -27,7 +27,9 @@
 main {
   background-color: var(--color-dark-700);
 }
-
+/*a:visited {
+  color: var(--color-accent-500);
+}*/
 .container {
   max-width: 1310px; // 1280 maket + 30 padding
   margin: 0 auto;
