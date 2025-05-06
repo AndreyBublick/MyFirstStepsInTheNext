@@ -1,6 +1,5 @@
 'use client'
-import { type ComponentPropsWithoutRef, useCallback, useState } from 'react'
-import s from './Layout.module.scss'
+import React, { type ComponentPropsWithoutRef, useCallback, useState } from 'react'
 import { Header } from '@/features/header/ui/Header'
 import { PickerPrev } from '@/shared/picker/PickerPrev/ui/PickerPrev'
 import { type Option, Picker } from '@/shared/picker/Picker/ui/Picker'
@@ -50,7 +49,7 @@ export default function Layout(props: Props) {
         <Picker options={languages} defaultValue={'lo1'} minWidth={'163px'} />
         {!isLoggedIn ? <Button onClick={loginHandler}>login</Button> : <Button onClick={logoutHandler}>logout</Button>}
       </Header>
-      <main {...props} className={s.main} />
+      {props.children}
     </>
   )
 }
