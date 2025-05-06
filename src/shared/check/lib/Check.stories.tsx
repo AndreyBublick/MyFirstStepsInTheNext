@@ -1,9 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { fn } from '@storybook/test'
-import { Button } from '../ui/Button'
-import image from '../../../_accets/test/bee.png'
-import Image from 'next/image'
-
+/*
 const meta = {
   title: 'Example/Button',
   component: Button,
@@ -17,9 +12,9 @@ const meta = {
       options: ['primary', 'secondary', 'outlined', 'text'],
     },
   },
-  /* argTypes: {
+  /!* argTypes: {
     backgroundColor: { control: 'color' },
-  },*/
+  },*!/
   args: { onClick: fn() },
 } satisfies Meta<typeof Button>
 
@@ -57,3 +52,4 @@ export const Text: Story = {
     children: 'Button',
   },
 }
+*/

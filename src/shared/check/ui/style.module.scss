@@ -1,43 +1,21 @@
-.button {
-  cursor: pointer;
-  padding: 0.4em 2em;
-
-  /* border: none; */
-  border-radius: 2px;
-  outline: none;
-
-  &:active {
-    border: none;
-    outline: none;
-  }
-
-  &:focus-visible {
-    border: none;
-    outline: 2px solid white;
-  }
+/*.check_item::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url('../../../_accets/checkmark-outline.svg') center/125% no-repeat;
+  transition: opacity 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
 }
-
-.primary {
-  color: var(--color-light-100);
-  background-color: var(--color-accent-900);
-}
-
-.secondary {
-  color: white;
-  background-color: var(--color-dark-300);
-}
-
-.outlined {
-  border: 1px solid var(--color-accent-500);
-  color: var(--color-accent-500);
-  background-color: transparent;
-}
-
-.text {
-  color: var(--color-accent-500);
-  background-color: transparent;
-}
-
+.check_item:checked::before {
+  opacity: 1;
+}*/
+/*.check_item {
+  background: none;
+}*/
 .lg {
   font-size: 20px;
 }
@@ -48,8 +26,4 @@
 
 .sm {
   font-size: 14px;
-}
-
-.button.fullWidth {
-  width: 100%;
 }

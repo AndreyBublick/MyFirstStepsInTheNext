@@ -10,6 +10,7 @@ import { useLoader } from '@/hooks/useLoader'
 import { useAppDispatch, useAppSelector } from '@/hooks/RTK'
 import { login, logout, selectIsLoggedIn } from '@/app/appSlice'
 import { Button } from '@/shared/button'
+import { Check } from '@/shared/check/ui/Check'
 
 type Props = ComponentPropsWithoutRef<'div'>
 
@@ -45,7 +46,7 @@ export default function Layout(props: Props) {
             { id: 3, value: 'Junior +' },
           ]}
         />
-
+        <Check />
         <Picker options={languages} defaultValue={'lo1'} minWidth={'163px'} />
         {!isLoggedIn ? <Button onClick={loginHandler}>login</Button> : <Button onClick={logoutHandler}>logout</Button>}
       </Header>
