@@ -3,3 +3,5 @@ export * from './popup'
 
 export * from './hoverCard'
 export * from './page'
+export * from './input'
+
