@@ -24,6 +24,7 @@ const PageCharacters = () => {
       <br />
       <Input placeholder={'Epam@epam.com'} type={'email'} size='lg' label={'andrew'}></Input>
       <Input
+        disabled
         placeholder={'Epam@epam.com'}
         size={'md'}
         onIconClick={isShowPassword ? closeShowPassword : openShowPassword}
