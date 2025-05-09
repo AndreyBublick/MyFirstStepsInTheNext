@@ -2,7 +2,7 @@ import React, { type ChangeEvent, type ComponentPropsWithoutRef, useCallback, us
 import clsx from 'clsx'
 
 import s from './style.module.scss'
-import { CheckmarkOutline } from '@/_accets/icons/components'
+import CheckmarkOutline from './CheckmarkOutline'
 
 export type SizeProps = 'lg' | 'md' | 'sm'
 
@@ -38,7 +38,6 @@ export const Check = (props: CheckProps) => {
             id={title}
             className={
               classNames +
-              ' ' +
               'appearance-none bg-[transparent] w-4.5 h-4.5 border-2 border-[var(--color-light-500)] rounded-[2px] checked:bg-[var(--color-light-500)] transition ease-in-out duration-150 cursor-pointer'
             }
             {...rest}
