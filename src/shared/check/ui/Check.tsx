@@ -47,7 +47,6 @@ export const Check = (props: CheckProps) => {
             className={`absolute top-1/2 left-1/2  -translate-y-1/2 -translate-x-1/2 scale-85 text-[var(--color-dark-900)] pointer-events-none transition ease-in-out duration-150 ${isChecked ? 'opacity-100' : 'opacity-20'}`}
           />
         </div>
-
         {title && (
           <label className={'cursor-pointer '} htmlFor={title}>
             {title}
