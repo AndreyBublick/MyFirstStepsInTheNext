@@ -5,6 +5,7 @@ import { CardBody, type CardBodyProps } from '@/features/cards/ui/CardBody'
 type Props = {
   id: number
 } & CardBodyProps
+
 export const Card = (props: Props) => {
   const { id, ...rest } = props
 
