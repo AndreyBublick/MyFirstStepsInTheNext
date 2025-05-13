@@ -10,8 +10,10 @@ export const Card = (props: Props) => {
   const { id, ...rest } = props
 
   return (
-    <Link href={`/characters/${id}`} className='group'>
-      <CardBody {...rest} />
-    </Link>
+    <>
+      <Link href={`/characters/${id}`} className='group'>
+        <CardBody {...rest} />
+      </Link>
+    </>
   )
 }
