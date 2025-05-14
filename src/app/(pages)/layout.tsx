@@ -61,10 +61,6 @@ export default function Layout(props: Props) {
               {isActive('/characters') ? <Person className={classNameActiveElement} /> : <PersonOutline />}
             </Link>
           </MenuItem>
-
-          {/* <MessageCircleOutline />
-        <SearchOutline />
-        <Person />*/}
         </Menu>
       )}
     </>
