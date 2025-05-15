@@ -51,14 +51,15 @@ export default function Layout(props: Props) {
               {isActive('/messages') ? <MessageCircle className={classNameActiveElement} /> : <MessageCircleOutline />}
             </Link>
           </MenuItem>
-          <MenuItem>
-            <Link href={'/search'}>
-              {isActive('/search') ? <Search className={classNameActiveElement} /> : <SearchOutline />}
-            </Link>
-          </MenuItem>
+
           <MenuItem>
             <Link href={'/characters'}>
               {isActive('/characters') ? <Person className={classNameActiveElement} /> : <PersonOutline />}
+            </Link>
+          </MenuItem>
+          <MenuItem>
+            <Link href={'/search'}>
+              {isActive('/search') ? <Search className={classNameActiveElement} /> : <SearchOutline />}
             </Link>
           </MenuItem>
         </Menu>
