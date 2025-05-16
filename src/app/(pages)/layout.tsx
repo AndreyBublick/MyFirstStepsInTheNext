@@ -23,7 +23,7 @@ type Props = ComponentPropsWithoutRef<'div'>
 const HOME_PAGE = '/'
 export default function Layout(props: Props) {
   useLoader()
-
+  /**/
   const isActive = (href: string) => {
     if (href === HOME_PAGE) {
       return href === pathname
