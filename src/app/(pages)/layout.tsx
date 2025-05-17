@@ -18,7 +18,7 @@ import {
 } from '@/_accets/icons/components'
 import { useIsMobile } from '@/hooks/useMobile'
 import { usePathname } from 'next/navigation'
-
+/**/
 type Props = ComponentPropsWithoutRef<'div'>
 const HOME_PAGE = '/'
 export default function Layout(props: Props) {
