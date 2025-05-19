@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { CardBody, type CardBodyProps } from '@/features/cards/ui/CardBody'
-
+/**/
 type Props = {
   id: number
 } & CardBodyProps
