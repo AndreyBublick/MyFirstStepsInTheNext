@@ -59,6 +59,7 @@ export const DefaultPopup: Story = {
   render: Render,
 }
 export const Open: Story = {
+  ...DefaultPopup,
   args: {
     title: 'write',
     subTitle: 'valera',
@@ -67,9 +68,9 @@ export const Open: Story = {
     ),
     open: true,
   },
-  render: Render,
 }
 export const Close: Story = {
+  ...DefaultPopup,
   args: {
     title: 'write',
     subTitle: 'valera',
@@ -78,5 +79,4 @@ export const Close: Story = {
     ),
     open: false,
   },
-  render: Render,
 }
