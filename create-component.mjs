@@ -2,7 +2,8 @@ import fs from 'node:fs'
 import fsPromises from 'node:fs/promises'
 import * as prettier from 'prettier'
 
-const config = prettier.resolveConfig.async('./.prettierrc.json')
+const configPath = await prettier.resolveConfigFile('./.prettierrc.json')
+const config = await prettier.resolveConfig(configPath)
 
 const getNameWithUpperFirstLetter = name => {
   name = name.split('')
@@ -14,11 +15,33 @@ const getNameWithUpperFirstLetter = name => {
   return name.join('')
 }
 
-const updateMainIndex = async name => {
-  const mainIndexPath = './src/shared/index.ts'
-  const mainIndexContent = await fsPromises.readFileSync(mainIndexPath, 'utf8')
-  const mainIndexContentArray = mainIndexContent.split('\n')
+const getComponentContent = async name => {
+  const nameWithUpperFirstLetter = getNameWithUpperFirstLetter(name)
 
+  return prettier.format(
+    `import React from 'react'
+ import s from './${nameWithUpperFirstLetter}.module.scss'
+  
+ export type ${nameWithUpperFirstLetter}Props = {}
+  
+ export const ${nameWithUpperFirstLetter} = (props:${nameWithUpperFirstLetter}Props) => {
+ 
+ const {...rest} = props
+  
+ return <></>
+ 
+ }`,
+    { filepath: `${nameWithUpperFirstLetter}.tsx`, ...config },
+  )
+}
+const updateMainIndex = async name => {
+  const mainIndexPath = './src/shared/ui/index.ts'
+  const mainIndexContent = await fsPromises.readFile(mainIndexPath, 'utf8')
+  const mainIndexContentArray = mainIndexContent.split('\n')
+  const lineToAdd = `export * from './${name}'`
+  if (mainIndexContent.includes(lineToAdd)) {
+    return
+  }
   /*const importIndex = mainIndexContentArray.findIndex(line => line.includes('export * from'))*/
   mainIndexContentArray.unshift(`export * from './${name}'`)
 
@@ -30,10 +53,10 @@ const updateMainIndex = async name => {
   fs.writeFileSync(mainIndexPath, formatted)
 }
 
-export default function createComponent(name) {
+async function createComponent(name) {
   const nameWithUpperFirstLetter = getNameWithUpperFirstLetter(name)
 
-  const dirPath = `./src/shared/${name}`
+  const dirPath = `./src/shared/ui/${name}`
   /* const path = `${dirPath}/${nameWithUpperFirstLetter}.tsx`*/
 
   const scssPath = `${dirPath}/${nameWithUpperFirstLetter}.module.scss`
@@ -44,7 +67,7 @@ export default function createComponent(name) {
 
   const storyContent = `
 import type { Meta, StoryObj } from '@storybook/react'
-import { ${nameWithUpperFirstLetter} } from '@/shared/${name}'
+import { ${nameWithUpperFirstLetter} } from '@/shared/ui/${name}'
 
 
 const meta = {
@@ -58,7 +81,6 @@ const meta = {
 } satisfies Meta<typeof ${nameWithUpperFirstLetter}>
 
 export default meta
-
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
@@ -67,21 +89,7 @@ export const Default: Story = {
 `
 
   const scssContent = ``
-  const componentContent = `import React from 'react'
-  import s from './${nameWithUpperFirstLetter}.module.scss'
-  
- export type ${nameWithUpperFirstLetter}Props = {
-  
-  }
-  
-  export const ${nameWithUpperFirstLetter} = (props:${nameWithUpperFirstLetter}Props) => {
-  
-  const {,...rest} = props
-  
-  return <></>
-  
-  }
-  `
+  const componentContent = await getComponentContent(name)
 
   if (!fs.existsSync(dirPath)) {
     fs.mkdirSync(dirPath)
@@ -98,6 +106,6 @@ if (!name) {
   console.log('Please provide a valid component name')
   process.exit(1)
 } else {
-  createComponent(name)
-  updateMainIndex(name)
+  void createComponent(name)
+  void updateMainIndex(name)
 }

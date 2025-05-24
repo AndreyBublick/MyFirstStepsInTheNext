@@ -1,15 +1,15 @@
 'use client'
 import React, { type ComponentPropsWithoutRef, useCallback, useState } from 'react'
 import { Header } from '@/features/header/ui/Header'
-import { PickerPrev } from '@/shared/picker/PickerPrev/ui/PickerPrev'
-import { type Option, Picker } from '@/shared/picker/Picker/ui/Picker'
+import { PickerPrev } from '@/shared/ui/picker/PickerPrev/ui/PickerPrev'
+import { type Option, Picker } from '@/shared/ui/picker/Picker/ui/Picker'
 import { FlagRussia, FlagUnitedKingdom } from '@/_accets/icons/components'
-import { Radio, RadioGroup } from '@/shared/radio'
+import { Radio, RadioGroup } from '../../../shared/ui/radio'
 import { useLoader } from '@/hooks/useLoader'
 import { useAppDispatch, useAppSelector } from '@/hooks/RTK'
 import { login, logout, selectIsLoggedIn } from '@/app/appSlice'
-import { Button } from '@/shared/button'
-import { Check } from '@/shared/check/ui/Check'
+import { Button } from '../../../shared/ui/button'
+import { Check } from '@/shared/ui/check/ui/Check'
 
 type Props = ComponentPropsWithoutRef<'div'>
 

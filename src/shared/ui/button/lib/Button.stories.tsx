@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { fn } from '@storybook/test'
 import { Button } from '../ui/Button'
-import image from '../../../_accets/test/bee.png'
+import image from '../../../../_accets/test/bee.png'
 import Image from 'next/image'
 
 const meta = {

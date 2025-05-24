@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import Popup from '@/shared/popup/ui/Popup'
+import Popup from '@/shared/ui/popup/ui/Popup'
 import { CardBody } from '@/features/cards/ui/CardBody'
 
 type Props = {

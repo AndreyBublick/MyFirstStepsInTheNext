@@ -1,41 +1,37 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import Popup, { type PopupProps } from '@/shared/ui/popup/ui/Popup'
 import * as React from 'react'
 import { useEffect, useState } from 'react'
-import { fn } from '@storybook/test'
-import { Picker, type PropsPicker } from '@/shared'
+import { CardBody } from '@/features/cards/ui/CardBody'
 
-const DEFAULT_OPTIONS = [
-  { id: 1, value: 'value_1' },
-  { id: 2, value: 'value_2' },
-  { id: 3, value: 'value_3' },
-]
+const Render = (props: PopupProps) => {
+  const { children, title, open, subTitle } = props
 
-const RenderTextValue = (props: PropsPicker) => {
-  const { options, ...rest } = props
-
-  const [optionsValue, setOptionsValue] = useState(options)
+  const [isOpen, setOpen] = useState(open)
 
   useEffect(() => {
-    if (Array.isArray(options)) {
-      setOptionsValue(options)
-    }
-  }, [options])
+    setOpen(open)
+  }, [open])
 
-  /* const onOpenChange = (flag: boolean): void => {
+  const onOpenChange = (flag: boolean): void => {
     setOpen(flag)
-  }*/
+  }
 
   return (
     <>
-      <Picker options={optionsValue} {...rest} />
+      <div className={isOpen ? '' : 'cursor-pointer'}>
+        <Popup title={title} open={isOpen} onOpenChange={onOpenChange} subTitle={subTitle}>
+          {children}
+        </Popup>
+      </div>
     </>
   )
 }
 
 // More on how to set up stories at:
 const meta = {
-  title: 'Example/Picker',
-  component: Picker,
+  title: 'Example/Popup',
+  component: Popup,
   parameters: {
     // Optional parameter to center the component in the Canvas. More  iinfo: https://storybook.js.org/docs/configure/story - layout
     layout: 'centered',
@@ -44,28 +40,26 @@ const meta = {
 
   // Use  to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   /* args: { onClick:  fn() },*/
-} satisfies Meta<typeof Picker>
+} satisfies Meta<typeof Popup>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const DefaultPicker: Story = {
+export const DefaultPopup: Story = {
   args: {
-    options: DEFAULT_OPTIONS,
-    onChange: fn(),
+    title: 'write',
+    subTitle: 'valera',
+    children: (
+      /*<CardBody image={'https://images.drive.ru/i/0/4efb822709b602c33f000aa5.jpg'} title={'test'} body={'body'} />*/
+      <h1>Test Component</h1>
+    ),
+    open: false,
   },
-
-  /*argTypes: {
-    options: {
-      control: {
-        type: 'object', // Используем текстовый контрол
-      },
-    },
-  },*/
-  render: RenderTextValue,
+  render: Render,
 }
-/*export const Open: Story = {
+export const Open: Story = {
+  ...DefaultPopup,
   args: {
     title: 'write',
     subTitle: 'valera',
@@ -74,9 +68,9 @@ export const DefaultPicker: Story = {
     ),
     open: true,
   },
-  render: Render,
 }
 export const Close: Story = {
+  ...DefaultPopup,
   args: {
     title: 'write',
     subTitle: 'valera',
@@ -85,5 +79,4 @@ export const Close: Story = {
     ),
     open: false,
   },
-  render: Render,
-}*/
+}

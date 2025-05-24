@@ -7,7 +7,7 @@ const HoverCardBase = () => (
     <HoverCard.Trigger asChild>
       <Link
         className='inline-block cursor-pointer rounded-full shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] outline-none focus:shadow-[0_0_0_2px_white]'
-        href='/'
+        href='/public'
         rel='noreferrer noopener'
       >
         {/* <Image width={0} height={0} className='block size-[45px] rounded-full' src='#' alt='Radix UI' />*/}
