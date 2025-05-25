@@ -2,6 +2,8 @@ import fs from 'node:fs'
 import fsPromises from 'node:fs/promises'
 import * as prettier from 'prettier'
 
+const name = process.argv[2]
+const currentDir = process.argv[3]
 const configPath = await prettier.resolveConfigFile('./.prettierrc.json')
 const config = await prettier.resolveConfig(configPath)
 
@@ -35,7 +37,7 @@ const getComponentContent = async name => {
   )
 }
 const updateMainIndex = async name => {
-  const mainIndexPath = './src/shared/ui/index.ts'
+  const mainIndexPath = `${currentDir}/index.ts`
   const mainIndexContent = await fsPromises.readFile(mainIndexPath, 'utf8')
   const mainIndexContentArray = mainIndexContent.split('\n')
   const lineToAdd = `export * from './${name}'`
@@ -56,7 +58,7 @@ const updateMainIndex = async name => {
 async function createComponent(name) {
   const nameWithUpperFirstLetter = getNameWithUpperFirstLetter(name)
 
-  const dirPath = `./src/shared/ui/${name}`
+  const dirPath = `${currentDir}/${name}`
   /* const path = `${dirPath}/${nameWithUpperFirstLetter}.tsx`*/
 
   const scssPath = `${dirPath}/${nameWithUpperFirstLetter}.module.scss`
@@ -101,7 +103,6 @@ export const Default: Story = {
   fs.writeFileSync(storyPath, storyContent)
 }
 
-const name = process.argv[2]
 if (!name) {
   console.log('Please provide a valid component name')
   process.exit(1)
