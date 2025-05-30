@@ -1,8 +1,7 @@
 'use client'
 import React, { useCallback, useState } from 'react'
-import { Page } from '@/shared/page/Page'
 import { Eye, EyeOutline, Search } from '@/_accets/icons/components'
-import { Input } from '@/shared/ui'
+import {Input, Page} from '@/shared/ui'
 
 const PageCharacters = () => {
   const [isShowPassword, setIsShowPassword] = useState<boolean>(false)
