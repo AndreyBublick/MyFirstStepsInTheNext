@@ -1,7 +1,8 @@
 import React from 'react'
 
 import { Card } from '@/features/cards/ui/Card'
-import type { CharacterType } from '@/app/types'
+
+import type { CharacterType } from '@/features/cards/lib/types'
 
 type Props = {
   items: CharacterType[]
