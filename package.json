@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@fontsource/inter": "^5.2.5",
+    "@hookform/resolvers": "^5.0.1",
     "@it-incubator/prettier-config": "^0.1.2",
     "@it-incubator/stylelint-config": "^2.0.0",
     "@next/eslint-plugin-next": "^15.2.4",
@@ -29,6 +30,7 @@
     "nprogress": "^0.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-hook-form": "^7.57.0",
     "react-redux": "^9.2.0",
     "tailwindcss": "^4.1.1",
     "zod": "^3.25.48"

@@ -18,5 +18,5 @@ export const cardsApi = baseApi.injectEndpoints({
     }),
   }),
 })
-
+/**/
 export const { useGetCharactersQuery, useGetCharacterQuery } = cardsApi
