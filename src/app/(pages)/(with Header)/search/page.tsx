@@ -15,7 +15,7 @@ const PageCharacters = () => {
     setIsShowPassword(true)
     console.log(true)
   }, [])
-
+/**/
   return (
     <Page>
       <h1>PageCharacters</h1>
