@@ -1,7 +1,7 @@
 'use client'
 import React, { useCallback, useState } from 'react'
 import { Eye, EyeOutline, Search } from '@/_accets/icons/components'
-import {Input, Page} from '@/shared/ui'
+import { Input, Page } from '@/shared/ui'
 
 const PageCharacters = () => {
   const [isShowPassword, setIsShowPassword] = useState<boolean>(false)
@@ -15,7 +15,7 @@ const PageCharacters = () => {
     setIsShowPassword(true)
     console.log(true)
   }, [])
-/**/
+
   return (
     <Page>
       <h1>PageCharacters</h1>
