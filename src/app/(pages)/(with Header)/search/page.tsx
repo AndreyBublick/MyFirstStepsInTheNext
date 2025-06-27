@@ -30,7 +30,7 @@ const PageCharacters = () => {
         type={isShowPassword ? 'text' : 'password'}
         icon={isShowPassword ? <Eye color={'white'} /> : <EyeOutline />}
       />
-
+      {/**/}
       <Input
         placeholder={'Input search'}
         size={'lg'}
