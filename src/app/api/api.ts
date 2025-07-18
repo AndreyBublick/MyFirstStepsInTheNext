@@ -9,6 +9,6 @@ export const baseApi = createApi({
       baseUrl: process.env.NEXT_PUBLIC_API_URL,
     })(args, api, extraOptions)
   }),
-
+/**/
   endpoints: () => ({}),
 })
