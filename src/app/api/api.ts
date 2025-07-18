@@ -6,9 +6,9 @@ export const baseApi = createApi({
   tagTypes: ['Todolist', 'Task'],
   baseQuery: baseQueryWithZodValidation(async (args, api, extraOptions) => {
     return fetchBaseQuery({
-      baseUrl: process.env.NEXT_PUBLIC_API_URL,
+      baseUrl: process.env.NEXT_PUBLIC_API_URL
     })(args, api, extraOptions)
   }),
 
-  endpoints: () => ({}),
+  endpoints: () => ({})
 })
