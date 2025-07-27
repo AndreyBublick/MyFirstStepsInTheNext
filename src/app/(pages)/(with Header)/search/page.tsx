@@ -10,7 +10,7 @@ const PageCharacters = () => {
     setIsShowPassword(false)
     console.log(false)
   }, [])
-
+  /**/
   const openShowPassword = useCallback(() => {
     setIsShowPassword(true)
     console.log(true)
