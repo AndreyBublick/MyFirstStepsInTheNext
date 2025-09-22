@@ -2,7 +2,7 @@
 import React from 'react'
 import { useGetCharacterQuery } from '@/features/cards/lib/api'
 import { SingleCardView } from '@/features/cards/ui/SingleCardView'
-/*1131a13a33вd3фф33dd3sd23*/
+/*1131a13a33вd3ф3ф33dd3sd23*/
 type Props = {
   params: Promise<{
     id: string
