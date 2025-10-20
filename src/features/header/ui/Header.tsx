@@ -4,7 +4,7 @@ import s from './Header.module.scss'
 import Link from 'next/link'
 
 type Props = ComponentPropsWithoutRef<'header'>
-/*рHgG555gл*/
+/*рHgG5555gл*/
 export const Header = ({ children, ...rest }: Props) => {
   return (
     <>
